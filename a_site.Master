@@ -1,0 +1,166 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="a_site.master.cs" Inherits="Canteen_Automation_System.a_site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Canteen Automation System</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/menu/simple_menu.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display:400italic'
+        rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.eislideshow.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/slides/slides.min.jquery.js"></script>
+    <script src="js/cycle-slider/cycle.js"></script>
+    <script src="js/nivo-slider/jquery.nivo.slider.js"></script>
+    <script src="js/tabify/jquery.tabify.js"></script>
+    <script src="js/prettyPhoto/jquery.prettyPhoto.js"></script>
+    <script src="js/twitter/jquery.tweet.js"></script>
+    <script src="js/scrolltop/scrolltopcontrol.js"></script>
+    <script src="js/portfolio/filterable.js"></script>
+    <script src="js/modernizr/modernizr-2.0.3.js"></script>
+    <script src="js/easing/jquery.easing.1.3.js"></script>
+    <script src="js/kwicks/jquery.kwicks-1.5.1.pack.js"></script>
+    <script src="js/swfobject/swfobject.js"></script>
+    <!-- get fancybox -->
+    <link rel="stylesheet" type="text/css" itemprop="javascript" href="js/fancybox/jquery.fancybox.css"
+        media="all">
+    <script src="js/fancybox/jquery.easing.1.3.js"></script>
+    <script src="js/fancybox/jquery.fancybox-1.2.1.js"></script>
+    <script>
+        $('ol#menu').simpleMenu();
+    </script>
+    <style type="text/css">
+        .pan
+        {
+            background-color: White;
+        }
+        .pan:hover
+        {
+            background-color: #F5F5F5;
+        }
+        
+        .button
+        {
+            background-color: white;
+            border: 1px solid #00695c;
+            color: #484848;
+            text-align: center;
+            padding: 10px 55px;
+            text-align: center;
+            font-family: Bell MT;
+            font-size: 18px;
+            -moz-border-radius: 7px;
+            -webkit-border-radius: 7px;
+            -khtml-border-radius: 7px;
+        }
+        .button:hover
+        {
+            background-color: white;
+            border: 1px solid #00695c;
+            box-shadow: 0 0 5px #00695c;
+            color: #00695c;
+        }
+        
+        .heading
+        {
+            font-family: Bell MT;
+            font-size: 28px;
+            color: #015987;
+        }
+        
+        .label
+        {
+            font-family: Bell MT;
+            font-size: 18px;
+            color: #484848;
+        }
+        
+        .txt
+        {
+            -webkit-transition: all 0.30s ease-in-out;
+            -moz-transition: all 0.30s ease-in-out;
+            -o-transition: all 0.30s ease-in-out;
+            font-size: 16px;
+            font-family: Palatino Linotype;
+            padding: 8px 8px 8px 8px;
+            border: 1px solid #DDDDDD;
+        }
+        
+        .txt:focus
+        {
+            box-shadow: 0 0 5px #00695c;
+            padding: 8px 8px 8px 8px;
+            border: 1px solid #00695c;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="header">
+        <!-- Dynamic Menu -->
+        <asp:Panel ID="Panel1" runat="server" Visible="false">
+            <ul id="menu" class="simple_menu simple_menu_css horizontal black_menu">
+                <li><a href="a_addstudent.aspx">Add Student</a></li>
+                <li><a href="a_addcanteen.aspx">Add Canteen</a></li>
+                    <li><a href="a_viewcanteen.aspx">View Canteen</a></li>
+                    <li><a href="a_viewstudent.aspx">View Student</a></li>
+                    <li><a href="a_balance.aspx">Add Balance</a></li>
+                    <li><a href="a_withdraw.aspx">Withdraw</a></li>
+                    <li class="last"><a href="a_logout.aspx">Logout</a></li>
+            </ul>
+        </asp:Panel>
+        <asp:Panel ID="Panel2" runat="server" Visible="false">
+            <center>
+                <ul id="menu" class="simple_menu simple_menu_css horizontal black_menu">
+                    <li><a href="c_additem.aspx">Add Item</a></li>
+                    <li><a href="c_viewitem.aspx">View Item</a></li>
+                        <li><a href="c_neworder.aspx">View Orders</a></li>
+                        <li><a href="c_transaction.aspx">View Transaction</a></li>
+                        <li><a href="c_addbalance.aspx">Add Balance</a></li>
+                        <li><a href="c_withdraw.aspx">Withdraw</a></li>
+                        <li class="last"><a href="c_logout.aspx">Logout</a></li>
+                </ul>
+            </center>
+        </asp:Panel>
+        <asp:Panel ID="Panel3" runat="server" Visible="false">
+            <center>
+                <ul id="menu" class="simple_menu simple_menu_css horizontal black_menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="AboutUs.aspx">About Us</a></li>
+                        <li><a href="ContactUs.aspx">Contact Us</a></li>
+                        <li class="last"><a href="Main.aspx">Logout</a></li>
+                </ul>
+            </center>
+        </asp:Panel>
+    </div>
+    <div>
+        <center>
+        <asp:Image ID="Image1" runat="server" ImageUrl="~/img/qw.png" />
+            </center>
+    </div>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    <!-- close container -->
+    <div id="footer" style="padding-top: 20px;">
+        <div style="width: 960px;">
+            <div class="one-fourth">
+                <!-- Footer Content -->
+                <center>
+                    <div style="color: White; font-size: larger; padding-right: 30px; padding-right: 0px;
+                        width: 1209px; padding-top: 0px; padding-bottom: 0px;">
+                        Canteen Automation System || Rizvi</div>
+                </center>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
