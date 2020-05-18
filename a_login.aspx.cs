@@ -11,7 +11,7 @@ namespace Canteen_Automation_System
 {
     public partial class a_login : System.Web.UI.Page
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=43.255.152.26;Initial Catalog=ACanteen;Persist Security Info=True;User ID=ACanteen;Password=Do5oe2#5");
+        SqlConnection conn = new SqlConnection
         protected void Page_Load(object sender, EventArgs e)
         {
 
